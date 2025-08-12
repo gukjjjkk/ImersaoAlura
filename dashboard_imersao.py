@@ -81,7 +81,7 @@ col_graf1, col_graf2 = st.columns(2)
 with col_graf1:
     if not df_filtrado.empty:
         top_cargos = df_filtrado.groupby('cargo')['usd'].mean().nlargest(10).sort_values(ascending=True).reset_index()
-        grafico_cargos = px.boxplot(
+        grafico_cargos = px.bar(
             top_cargos,
             x='usd',
             y='cargo',
@@ -96,7 +96,7 @@ with col_graf1:
 
 with col_graf2:
     if not df_filtrado.empty:
-        grafico_hist = px.histogram(
+        grafico_hist = px.pie(
             df_filtrado,
             x='usd',
             nbins=30,
