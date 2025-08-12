@@ -96,7 +96,7 @@ with col_graf1:
 
 with col_graf2:
     if not df_filtrado.empty:
-        grafico_hist = px.pie(
+        grafico_hist = px.histogram(
             df_filtrado,
             x='usd',
             nbins=30,
